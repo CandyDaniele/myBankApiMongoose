@@ -1,12 +1,14 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import {accountRouter} from './routes/accountRouter.js';
+import dotenv from 'dotenv';
 
+dotenv.config();
 const conect = async () => {
   try{
     await mongoose.connect(
     
-      'mongodb+srv://candydaniele:password@cluster0.s9tff.mongodb.net/bank?retryWrites=true&w=majority',
+      `mongodb+srv://candydaniele:${process.env.PASSWORD}@cluster0.s9tff.mongodb.net/bank?retryWrites=true&w=majority`,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
