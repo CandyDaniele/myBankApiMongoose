@@ -30,4 +30,5 @@ app.use("/account", accountRouter);
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
-app.listen(3000, () => console.log('Api iniciada'));
+
+app.listen(process.env.PORT, () => console.log('Api iniciada com sucesso'));
